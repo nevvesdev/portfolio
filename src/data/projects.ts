@@ -210,6 +210,33 @@ const projects: Project[] = [
     url: 'https://github.com/nevvesdev/distributed-transaction-coordinator',
     featured: true,
   },
+  {
+    id: '23',
+    name: 'Open Finance Consent Hub',
+    lang: 'java',
+    tags: ['Java 21', 'Docker', 'Flyway', 'PostgreSQL', 'Micrometer + Prometheus', 'Testcontainers'],
+    desc: 'Simulação do ciclo de vida de consentimentos e agregação de dados financeiros conforme o modelo do Open Finance Brasil',
+    url: 'https://github.com/nevvesdev/open-finance-consent',
+    featured: false,
+  },
+  {
+    id: '24',
+    name: 'Credit Line Management',
+    lang: 'go',
+    tags: ['Go'],
+    desc: 'Gestão de limite de crédito com aprovação automática e controle de utilização.',
+    url: 'https://github.com/nevvesdev/credit-line-management-system',
+    featured: true,
+  },
+  {
+    id: '25',
+    name: 'Notification Hub',
+    lang: 'go',
+    tags: ['Java 21', 'Kafka', 'Mailtrap', 'PostgreSQL', 'Thymeleaf', 'Flyway', 'Resilience4j', 'Testcontainers'],
+    desc: 'Microsserviço de notificações event-driven com Kafka, resiliência e audit log.',
+    url: 'https://github.com/nevvesdev/notification-hub',
+    featured: true,
+  },
   // novos projetos acima desta linha
 ]
 
