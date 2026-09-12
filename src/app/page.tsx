@@ -1,7 +1,3 @@
-// src/app/page.tsx
-// Página principal. É um Server Component — roda no servidor/build,
-// lê os projetos do arquivo .ts e passa para os componentes filhos.
-
 import Hero from '@/components/Hero'
 import ProjectsSection from '@/components/ProjectsSection'
 import projects from '@/data/projects'
