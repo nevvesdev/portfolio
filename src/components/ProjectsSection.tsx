@@ -7,8 +7,6 @@ import ProjectCard from './ProjectCard'
 const FILTERS = [
   { label: 'Todos',  value: 'all',    cls: '' },
   { label: 'Java',   value: 'java',   cls: 'f-java' },
-  { label: 'Go',     value: 'go',     cls: 'f-go' },
-  { label: 'Kotlin', value: 'kotlin', cls: 'f-kotlin' },
 ] as const
 
 type FilterValue = (typeof FILTERS)[number]['value']

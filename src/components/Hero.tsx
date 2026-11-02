@@ -9,8 +9,6 @@ export default function Hero() {
       </h1>
       <div className="hero-stacks fade-in" style={{ animationDelay: '180ms' }}>
         <span className="stack-pill java">Java</span>
-        <span className="stack-pill go">Golang</span>
-        <span className="stack-pill kotlin">Kotlin</span>
       </div>
       <nav className="hero-links fade-in" style={{ animationDelay: '280ms' }} aria-label="Redes sociais">
         <a href="https://github.com/nevvesdev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

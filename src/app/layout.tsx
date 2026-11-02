@@ -10,10 +10,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'João Victor Macedo Neves',
-  description: 'Backend Developer — Java · Golang · Kotlin',
+  description: 'Backend Developer — Java',
   openGraph: {
     title: 'João Victor Macedo Neves',
-    description: 'Backend Developer — Java · Golang · Kotlin',
+    description: 'Backend Developer — Java',
     type: 'website',
   },
 }
