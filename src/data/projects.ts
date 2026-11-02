@@ -13,95 +13,95 @@ export interface Project {
 const projects: Project[] = [
   {
     id: '1',
-    name: 'Message Broker from Scratch',
-    lang: 'go',
-    tags: ['Go', 'Direct/Fanout/Topic Exchange', 'Regex Routing', 'Event-Driven'],
-    desc: 'Message broker implementado do zero com suporte a múltiplos tipos de exchange (Direct, Fanout, Topic) e roteamento baseado em regex. Demonstra compreensão profunda de padrões de pub/sub e arquitetura de mensageria.',
-    url: 'https://github.com/nevvesdev/message-broker',
+    name: 'Event-Driven Banking',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'Kafka', 'PostgreSQL', 'Flyway', 'Docker Compose', 'GitHub Actions', 'Event-Driven'],
+    desc: 'Sistema bancário composto por três microsserviços (conta, transferência e notificação) que se comunicam via REST e Kafka. Demonstra arquitetura orientada a eventos, idempotência e comunicação assíncrona entre serviços.',
+    url: 'https://github.com/nevvesdev/event-driven-banking',
     featured: true,
   },
   {
     id: '2',
-    name: 'Resilience Toolkit',
-    lang: 'go',
-    tags: ['Go', 'Circuit Breaker', 'Bulkhead', 'Retry', 'Clean Architecture', 'DDD'],
-    desc: 'Toolkit de resiliência com Circuit Breaker, Bulkhead e Retry policies. Inclui dashboard SSE e exporter Prometheus. Arquitetura limpa demonstrando princípios de DDD.',
-    url: 'https://github.com/nevvesdev/resilience-toolkit',
+    name: 'Rate Limiter',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'JUnit 5', 'Mockito', 'AssertJ', 'Docker Compose', 'Actuator', 'Swagger UI'],
+    desc: 'Implementação de rate limiting com algoritmos clássicos em Java puro, exposta via API REST, demonstrando domínio de concorrência, estruturas de dados e design de algoritmos — sem depender de frameworks para a lógica central.',
+    url: 'https://github.com/nevvesdev/rate-limiter',
     featured: true,
   },
   {
     id: '3',
-    name: 'Idempotency Key Middleware',
-    lang: 'go',
-    tags: ['Go', 'HTTP Middleware', 'Redis', 'Distributed Locking', 'Lua Scripts', 'Prometheus'],
-    desc: 'Middleware HTTP com suporte a idempotência distribuída via Redis com scripts Lua. Inclui armazenamento em memória e Redis, métricas Prometheus isoladas e exemplo com Docker Compose.',
-    url: 'https://github.com/nevvesdev/idempotency-key-middleware',
+    name: 'Guardian API',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'Security', 'JWT', 'PostgreSQL', 'Flyway', 'Redis', 'JUnit', 'Mockito', 'Testcontainers', 'Swagger UI'],
+    desc: 'API de gestão de recursos com autenticação JWT (access e refresh token), controle de acesso por RBAC e auditoria de acessos. Inclui rate limiting com Redis e foi construída com padrões de produção.',
+    url: 'https://github.com/nevvesdev/guardian-api',
     featured: true,
   },
   {
     id: '4',
-    name: 'High Performance Ledger',
-    lang: 'go',
-    tags: ['Go', 'Event Sourcing', 'WAL', 'Snapshots', 'Benchmarks'],
-    desc: 'Sistema de ledger com Event Sourcing, WAL append-only e snapshotting. Suporta múltiplos codecs (JSON, MessagePack, Protobuf) com benchmarks de performance.',
-    url: 'https://github.com/nevvesdev/high-perf-ledger',
+    name: 'Open Finance Consent',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'Security', 'OAuth2', 'JWT', 'JPA', 'PostgreSQL', 'Flyway', 'JUnit 5', 'Mockito', 'Testcontainers', 'Micrometer', 'Actuator', 'Scheduling'],
+    desc: 'API de gestão de consentimentos de dados financeiros, no modelo do Open Finance Brasil. Implementa autenticação JWT RS256, validação de escopos OAuth2, geração de eventos com Transactional Outbox e agregação de dados de múltiplos bancos. Estruturada em Arquitetura Hexagonal.',
+    url: 'https://github.com/nevvesdev/open-finance-consent',
     featured: true,
   },
   {
     id: '5',
-    name: 'Distributed Rate Limiter',
-    lang: 'go',
-    tags: ['Go', 'Redis', 'Lua Scripts', 'Sliding Window', 'Middleware'],
-    desc: 'Rate limiter distribuído com algoritmo de sliding window via Redis e Lua. Middleware plugável com testes de concorrência.',
-    url: 'https://github.com/nevvesdev/distributed-rate-limiter',
+    name: 'Notification Hub',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'Kafka', 'Mail + Mailtrap', 'Thymeleaf', 'PostgreSQL', 'Flyway', 'Resilience4j', 'JUnit 5', 'Mockito', 'Testcontainers', 'Actuator', 'Micrometer'],
+    desc: 'Microsserviço de notificações orientado a eventos, que consome mensagens do Kafka e envia notificações por e-mail. Oferece entrega confiável com retry automático, circuit breaker e rastreabilidade completa.',
+    url: 'https://github.com/nevvesdev/notification-hub',
     featured: true,
   },
   {
     id: '6',
-    name: 'Distributed Order Saga',
-    lang: 'go',
-    tags: ['Go', 'Ruby', 'Saga Pattern', 'Choreography', 'Transactional Outbox', 'OpenTelemetry', 'Jaeger'],
-    desc: 'Orquestração de saga distribuída em polyglot (Go + Ruby) com padrão choreography, Transactional Outbox e observabilidade via OpenTelemetry/Jaeger.',
-    url: 'https://github.com/nevvesdev/distributed-order-saga',
+    name: 'CQRS + Transactional Outbox + CDC',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'PostgreSQL', 'Flyway', 'Kafka', 'CQRS', 'Outbox', 'CDC', 'Idempotência', 'JUnit 5', 'Mockito', 'Testcontainers', 'Swagger UI'],
+    desc: 'Implementação dos padrões CQRS, Transactional Outbox e CDC em dois microsserviços. Garante consistência eventual entre serviços sem Two-Phase Commit, com publicação de eventos no Kafka por polling, simulando CDC.',
+    url: 'https://github.com/nevvesdev/cqrs-pattern',
     featured: true,
   },
   {
     id: '7',
-    name: 'Orchestrated Order Saga',
-    lang: 'go',
-    tags: ['Go', 'Kafka', 'Saga Pattern', 'Orchestration', 'State Machine'],
-    desc: 'Saga orquestrada centralmente em Go com orquestrador dedicado, topics Kafka para commands/replies e máquina de estados completa.',
-    url: 'https://github.com/nevvesdev/orchestrated-order-saga',
-    featured: false,
-  },
-  {
-    id: '8',
-    name: 'Schedule Hub',
-    lang: 'java',
-    tags: ['Java', 'Spring Boot', 'Microsservices', 'Monorepo'],
-    desc: 'Plataforma multiestabelecimento para gerenciamento de agendamentos de serviços.',
-    url: 'https://github.com/nevvesdev/schedulehub',
-    featured: true,
-  },
-  {
-    id: '9',
-    name: 'Credit Score Engine',
-    lang: 'kotlin',
-    tags: ['Kotlin', 'Spring Boot', 'JWT', 'MockK', 'OpenAPI'],
-    desc: 'Motor de cálculo de score de crédito com autenticação JWT, testes com MockK e documentação OpenAPI.',
-    url: 'https://github.com/nevvesdev/credit-score-engine',
-    featured: false,
-  },
-  {
-    id: '10',
     name: 'FX Rate & Currency Exchange API',
-    lang: 'kotlin',
-    tags: ['Kotlin', 'Spring Boot', 'Clean Architecture', 'Redis', 'Flyway'],
-    desc: 'API de taxas de câmbio com arquitetura limpa, integração com Open Exchange Rates, cache Redis e migrations Flyway.',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'PostgreSQL', 'Flyway', 'Redis', 'Resilience4j', 'ShedLock', 'Micrometer', 'JaCoCo', 'JUnit 5', 'Mockito', 'Testcontainers', 'Docker Compose', 'GitHub Actions', 'Swagger UI'],
+    desc: 'API REST de câmbio e taxas de moedas, voltada a fintechs e bancos digitais. Busca taxas de referência em provedor externo, armazena em cache e registra o histórico. Atualiza as taxas automaticamente e realiza conversões com precisão monetária exata.',
     url: 'https://github.com/nevvesdev/fx-currency-exchange',
     featured: false,
   },
   {
+    id: '8',
+    name: 'Distributed Cache',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'PostgreSQL', 'Flyway', 'Redis', 'Micrometer', 'JUnit 5', 'Mockito', 'Testcontainers', 'ArchUnit', 'Docker Compose', 'GitHub Actions'],
+    desc: 'Serviço de consulta de saldo e limite de contas com cache distribuído no padrão Cache-Aside. Estruturado em Arquitetura Hexagonal, com resiliência e métricas.',
+    url: 'https://github.com/nevvesdev/distributed-cache',
+    featured: true,
+  },
+  {
+    id: '9',
+    name: 'Alcada',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'PostgreSQL', 'Flyway', 'Micrometer', 'Resilience4j', 'Prometheus', 'Actuator', 'JUnit 5', 'Testcontainers', 'ArchUnit', 'Docker Compose', 'GitHub Actions', 'Swagger UI'],
+    desc: 'Serviço de aprovação e gestão de linhas de crédito. Utiliza Saga orquestrada com compensações, eventos via Transactional Outbox e requisições idempotentes. Recupera automaticamente processos interrompidos.',
+    url: 'https://github.com/nevvesdev/alcada',
+    featured: false,
+  },
+  {
+    id: '10',
+    name: 'FinanceFlow',
+    lang: 'java',
+    tags: ['Java 21', 'Spring Boot', 'Security', 'JWT', 'PostgreSQL', 'Flyway', 'Angular 21', 'TypeScript', 'SCSS', 'Docker Compose'],
+    desc: 'Painel de controle financeiro pessoal, com lançamentos, categorias, contas a vencer e alertas agendados. API: Java e Spring Boot e Web: Angular.',
+    url: 'https://github.com/nevvesdev/financeflow',
+    featured: false,
+  },
+ /* {
     id: '11',
     name: 'Payment Gateway Orchestrator',
     lang: 'java',
@@ -110,7 +110,7 @@ const projects: Project[] = [
     url: 'https://github.com/nevvesdev/payment-gateway-orchestrator',
     featured: true,
   },
-  {
+ /* {
     id: '12',
     name: 'Telegram Vagas Bot',
     lang: 'java',
@@ -119,7 +119,7 @@ const projects: Project[] = [
     url: 'https://github.com/nevvesdev/vagas-bot',
     featured: false,
   },
-  {
+ /* {
     id: '13',
     name: 'Settlement Engine',
     lang: 'java',
@@ -137,7 +137,7 @@ const projects: Project[] = [
     url: 'https://github.com/nevvesdev/rate-limiter',
     featured: false,
   },
-  {
+/*  {
     id: '15',
     name: 'Credit Approval (SAGA Pattern)',
     lang: 'kotlin',
@@ -164,7 +164,7 @@ const projects: Project[] = [
     url: 'https://github.com/nevvesdev/cqrs-pattern',
     featured: true,
   },
-  {
+/*  {
     id: '18',
     name: 'Interbank Transfer Service',
     lang: 'kotlin',
@@ -173,17 +173,8 @@ const projects: Project[] = [
     url: 'https://github.com/nevvesdev/interbank-transfer-service',
     featured: false,
   },
-  {
-    id: '19',
-    name: 'Distributed Lock Manager',
-    lang: 'go',
-    tags: ['Go', 'Loa', 'Redis', 'Heartbeat', 'Fencing Token'],
-    desc: 'Gerenciador de locks distribuídos implementado em Go com Redis, scripts Lua atômicos, fencing tokens e renovação automática via heartbeat.',
-    url: 'https://github.com/nevvesdev/distributed-lock-manager',
-    featured: true,
 
-  },
-  {
+/* {
     id: '20',
     name: 'Realtime Payment',
     lang: 'go',
@@ -191,8 +182,8 @@ const projects: Project[] = [
     desc: 'Processador de pagamentos em tempo real - estudando sobre GraphQL.',
     url: 'https://github.com/nevvesdev/realtime-payment',
     featured: true,
-  },
-  {
+  }, */
+/*  {
     id: '21',
     name: 'Distributed Cache',
     lang: 'java',
@@ -201,7 +192,7 @@ const projects: Project[] = [
     url: 'https://github.com/nevvesdev/distributed-cache',
     featured: true,
   },
-  {
+ /* {
     id: '22',
     name: 'Distributed Transaction Coordinator',
     lang: 'java',
@@ -209,17 +200,8 @@ const projects: Project[] = [
     desc: 'Um orquestrador de transações distribuídas com suporte a 2-Phase Commit e Saga Pattern.',
     url: 'https://github.com/nevvesdev/distributed-transaction-coordinator',
     featured: true,
-  },
-  {
-    id: '23',
-    name: 'Open Finance Consent Hub',
-    lang: 'java',
-    tags: ['Java 21', 'Docker', 'Flyway', 'PostgreSQL', 'Micrometer + Prometheus', 'Testcontainers'],
-    desc: 'Simulação do ciclo de vida de consentimentos e agregação de dados financeiros conforme o modelo do Open Finance Brasil',
-    url: 'https://github.com/nevvesdev/open-finance-consent',
-    featured: false,
-  },
-  {
+  }, */
+ /* {
     id: '24',
     name: 'Credit Line Management',
     lang: 'go',
@@ -227,8 +209,8 @@ const projects: Project[] = [
     desc: 'Gestão de limite de crédito com aprovação automática e controle de utilização.',
     url: 'https://github.com/nevvesdev/credit-line-management-system',
     featured: true,
-  },
-  {
+  }, */
+/*  {
     id: '25',
     name: 'Notification Hub',
     lang: 'go',
@@ -236,7 +218,8 @@ const projects: Project[] = [
     desc: 'Microsserviço de notificações event-driven com Kafka, resiliência e audit log.',
     url: 'https://github.com/nevvesdev/notification-hub',
     featured: true,
-  },
+  }, */
+
   // novos projetos acima desta linha
 ]
 
