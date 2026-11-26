@@ -11,14 +11,14 @@
 :root {
   --bg:            #0a0a0a;
   --teal:          #0d9488;
-  --go:            #00ACD7;
-  --kotlin:        #A97BFF;
+  --cyan:          #00ACD7;
+  --violet:        #A97BFF;
   --coral:         #ea5c2b;
   --text-primary:  #f0f0ee;
-  --text-secondary:#8a8a85;
-  --text-tertiary: #4a4a47;
+  --text-secondary:#9a9a94;
+  --text-tertiary: #5d5d59;
   --border:        rgba(255,255,255,0.06);
-  --border-card:   rgba(255,255,255,0.07);
+  --border-card:   rgba(255,255,255,0.08);
   --card-bg:       rgba(255,255,255,0.025);
 }
 
@@ -26,6 +26,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -36,6 +37,12 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.5;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1.5px solid var(--teal);
+  outline-offset: 3px;
 }
 
 /* Gradient atmosphere */
@@ -79,17 +86,17 @@ body::before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 88vh;
   text-align: center;
-  padding-bottom: 2rem;
+  padding: 3rem 0 2rem;
 }
 
 .hero-eyebrow {
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--teal);
   margin-bottom: 18px;
 }
 
@@ -98,7 +105,16 @@ body::before {
   font-weight: 300;
   letter-spacing: -0.025em;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+}
+
+.hero-subtitle {
+  max-width: 560px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 24px;
 }
 
 /* Stack pills */
@@ -121,9 +137,10 @@ body::before {
   border: 0.5px solid;
 }
 
-.stack-pill.java   { color: var(--teal);   border-color: rgba(13,148,136,0.3);  background: rgba(13,148,136,0.07); }
-.stack-pill.go     { color: var(--go);     border-color: rgba(0,172,215,0.3);   background: rgba(0,172,215,0.07); }
-.stack-pill.kotlin { color: var(--kotlin); border-color: rgba(169,123,255,0.3); background: rgba(169,123,255,0.07); }
+.stack-pill.dados  { color: var(--teal);   border-color: rgba(13,148,136,0.35);  background: rgba(13,148,136,0.08); }
+.stack-pill.bi     { color: var(--cyan);   border-color: rgba(0,172,215,0.35);   background: rgba(0,172,215,0.08); }
+.stack-pill.ml     { color: var(--violet); border-color: rgba(169,123,255,0.35); background: rgba(169,123,255,0.08); }
+.stack-pill.accent { color: var(--coral);  border-color: rgba(234,92,43,0.35);   background: rgba(234,92,43,0.08); }
 
 /* Social links */
 
@@ -137,7 +154,7 @@ body::before {
 .hero-links a {
   display: flex;
   color: var(--text-secondary);
-  opacity: 0.7;
+  opacity: 0.75;
   text-decoration: none;
   transition: color 200ms ease, transform 200ms ease, opacity 200ms ease;
 }
@@ -153,6 +170,27 @@ body::before {
   height: 18px;
 }
 
+.hero-cta {
+  margin-top: 28px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 0.5px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.02);
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.hero-cta:hover {
+  color: var(--text-primary);
+  border-color: rgba(13,148,136,0.45);
+  background: rgba(13,148,136,0.08);
+  transform: translateY(-1px);
+}
+
 /* Divider */
 
 .divider {
@@ -162,10 +200,9 @@ body::before {
   margin: 2.5rem auto;
 }
 
-/* ── Projects ───────────────────────────────────────────────── */
+/* ── Focus / Pillars ────────────────────────────────────────── */
 
-.projects-section { padding-bottom: 5rem; }
-
+.section-header,
 .projects-header {
   display: flex;
   align-items: center;
@@ -179,6 +216,59 @@ body::before {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-tertiary);
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.focus-card {
+  background: var(--card-bg);
+  border: 0.5px solid var(--border-card);
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.focus-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+}
+
+.focus-card.track-dados::after { background: linear-gradient(90deg, transparent 10%, rgba(13,148,136,0.45)  50%, transparent 90%); }
+.focus-card.track-bi::after    { background: linear-gradient(90deg, transparent 10%, rgba(0,172,215,0.45)   50%, transparent 90%); }
+.focus-card.track-ml::after    { background: linear-gradient(90deg, transparent 10%, rgba(169,123,255,0.45) 50%, transparent 90%); }
+
+.focus-title {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin-bottom: 7px;
+}
+
+.focus-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* ── Projects ───────────────────────────────────────────────── */
+
+.projects-section { padding-bottom: 4rem; }
+
+.projects-count {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
 }
 
 /* Filters */
@@ -196,9 +286,9 @@ body::before {
   font-weight: 400;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   background: transparent;
-  border: 0.5px solid rgba(255,255,255,0.07);
+  border: 0.5px solid rgba(255,255,255,0.08);
   border-radius: 999px;
   padding: 5px 13px;
   cursor: pointer;
@@ -206,15 +296,13 @@ body::before {
   white-space: nowrap;
 }
 
-.filter-chip:hover { color: var(--text-secondary); border-color: rgba(255,255,255,0.15); }
+.filter-chip:hover { color: var(--text-primary); border-color: rgba(255,255,255,0.2); }
 
-.filter-chip.active          { color: var(--text-primary); border-color: rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); }
-.filter-chip.active.f-java,
-.filter-chip.active.f-spring,
-.filter-chip.active.f-kafka  { color: var(--teal);   border-color: rgba(13,148,136,0.45);  background: rgba(13,148,136,0.07); }
-.filter-chip.active.f-go,
-.filter-chip.active.f-docker { color: var(--go);     border-color: rgba(0,172,215,0.45);   background: rgba(0,172,215,0.07); }
-.filter-chip.active.f-kotlin { color: var(--kotlin); border-color: rgba(169,123,255,0.45); background: rgba(169,123,255,0.07); }
+.filter-chip.active            { color: var(--text-primary); border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.07); }
+.filter-chip.active.f-dados    { color: var(--teal);   border-color: rgba(13,148,136,0.45);  background: rgba(13,148,136,0.08); }
+.filter-chip.active.f-bi       { color: var(--cyan);   border-color: rgba(0,172,215,0.45);   background: rgba(0,172,215,0.08); }
+.filter-chip.active.f-ml       { color: var(--violet); border-color: rgba(169,123,255,0.45); background: rgba(169,123,255,0.08); }
+.filter-chip.active.f-accent   { color: var(--coral);  border-color: rgba(234,92,43,0.45);   background: rgba(234,92,43,0.08); }
 
 /* Grid */
 
@@ -233,11 +321,11 @@ body::before {
   padding: 1.2rem 1.35rem 1rem;
   display: flex;
   flex-direction: column;
-  min-height: 210px;
+  min-height: 225px;
   position: relative;
   overflow: hidden;
   transition: transform 220ms ease, border-color 220ms ease,
-              background 220ms ease, box-shadow 220ms ease, opacity 300ms ease;
+              background 220ms ease, box-shadow 220ms ease, opacity 300ms ease, filter 300ms ease;
   text-decoration: none;
   color: inherit;
 }
@@ -250,19 +338,24 @@ body::before {
   border-radius: 12px 12px 0 0;
 }
 
-.card.featured.lang-java::after   { background: linear-gradient(90deg, transparent 10%, rgba(13,148,136,0.5)  50%, transparent 90%); }
-.card.featured.lang-go::after     { background: linear-gradient(90deg, transparent 10%, rgba(0,172,215,0.5)   50%, transparent 90%); }
-.card.featured.lang-kotlin::after { background: linear-gradient(90deg, transparent 10%, rgba(169,123,255,0.5) 50%, transparent 90%); }
+.card.featured.track-dados::after { background: linear-gradient(90deg, transparent 10%, rgba(13,148,136,0.5)  50%, transparent 90%); }
+.card.featured.track-bi::after    { background: linear-gradient(90deg, transparent 10%, rgba(0,172,215,0.5)   50%, transparent 90%); }
+.card.featured.track-ml::after    { background: linear-gradient(90deg, transparent 10%, rgba(169,123,255,0.5) 50%, transparent 90%); }
 
-.card:hover                { transform: translateY(-2px); border-color: rgba(13,148,136,0.3);  background: rgba(13,148,136,0.04);  box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-.card.lang-go:hover        { border-color: rgba(0,172,215,0.3);   background: rgba(0,172,215,0.04);   box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-.card.lang-kotlin:hover    { border-color: rgba(169,123,255,0.3); background: rgba(169,123,255,0.04); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.card.track-dados:hover { transform: translateY(-2px); border-color: rgba(13,148,136,0.35);  background: rgba(13,148,136,0.04);  box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.card.track-bi:hover    { transform: translateY(-2px); border-color: rgba(0,172,215,0.35);   background: rgba(0,172,215,0.04);   box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.card.track-ml:hover    { transform: translateY(-2px); border-color: rgba(169,123,255,0.35); background: rgba(169,123,255,0.04); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
 
-.card.dimmed { opacity: 0.1; pointer-events: none; transform: none !important; }
+.card.dimmed {
+  opacity: 0.16;
+  filter: grayscale(0.5);
+  pointer-events: none;
+  transform: none !important;
+}
 
 /* Card internals */
 
-.card-lang-pill {
+.card-track-pill {
   display: inline-flex;
   font-size: 10px;
   letter-spacing: 0.07em;
@@ -273,9 +366,9 @@ body::before {
   margin-bottom: 11px;
 }
 
-.card-lang-pill.java   { background: rgba(13,148,136,0.1);  color: var(--teal);   border: 0.5px solid rgba(13,148,136,0.22); }
-.card-lang-pill.go     { background: rgba(0,172,215,0.1);   color: var(--go);     border: 0.5px solid rgba(0,172,215,0.22); }
-.card-lang-pill.kotlin { background: rgba(169,123,255,0.1); color: var(--kotlin); border: 0.5px solid rgba(169,123,255,0.22); }
+.card-track-pill.dados { background: rgba(13,148,136,0.1);  color: var(--teal);   border: 0.5px solid rgba(13,148,136,0.25); }
+.card-track-pill.bi    { background: rgba(0,172,215,0.1);   color: var(--cyan);   border: 0.5px solid rgba(0,172,215,0.25); }
+.card-track-pill.ml    { background: rgba(169,123,255,0.1); color: var(--violet); border: 0.5px solid rgba(169,123,255,0.25); }
 
 .card-title {
   font-size: 14.5px;
@@ -301,7 +394,7 @@ body::before {
 
 .card-tag {
   font-size: 10px;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   background: rgba(255,255,255,0.03);
   border: 0.5px solid rgba(255,255,255,0.07);
   border-radius: 4px;
@@ -323,24 +416,47 @@ body::before {
 
 .card-link:hover { opacity: 0.7; }
 
-.card.lang-java   .card-link { color: var(--teal); }
-.card.lang-go     .card-link { color: var(--go); }
-.card.lang-kotlin .card-link { color: var(--kotlin); }
+.card.track-dados .card-link { color: var(--teal); }
+.card.track-bi    .card-link { color: var(--cyan); }
+.card.track-ml    .card-link { color: var(--violet); }
 
 /* ── Footer ─────────────────────────────────────────────────── */
 
 .footer {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
   font-size: 11px;
   color: var(--text-tertiary);
   letter-spacing: 0.04em;
-  padding: 4rem 0 2.5rem;
+  padding: 3rem 0 2.5rem;
+}
+
+.footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer a:hover {
+  color: var(--text-primary);
 }
 
 /* ── Responsive ─────────────────────────────────────────────── */
 
-@media (max-width: 780px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .projects-grid { grid-template-columns: 1fr; } }
+@media (max-width: 780px) {
+  .focus-grid,
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .focus-grid,
+  .projects-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 600px) {
   .page { padding: 0 18px; }
+  .hero { min-height: 80vh; }
 }

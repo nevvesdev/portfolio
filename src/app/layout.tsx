@@ -9,12 +9,15 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'João Victor Macedo Neves',
-  description: 'Backend Developer — Java',
+  title: 'João Victor Macedo Neves — Analista de Dados, BI & ML',
+  description:
+    'Portfólio de João Victor Macedo Neves com projetos em Python, SQL, Databricks, Spark, análise de KPIs e SLAs, Business Intelligence e Machine Learning.',
   openGraph: {
-    title: 'João Victor Macedo Neves',
-    description: 'Backend Developer — Java',
+    title: 'João Victor Macedo Neves — Analista de Dados, BI & ML',
+    description:
+      'Projetos em Python, SQL, Databricks, Spark, monitoramento de KPIs/SLAs, testes A/B e detecção de anomalias.',
     type: 'website',
+    locale: 'pt_BR',
   },
 }
 

@@ -8,15 +8,16 @@ interface Props {
 }
 
 export default function ProjectCard({ project, dimmed }: Props) {
-  const { name, lang, tags, desc, url, featured } = project
+  const { name, track, trackLabel, tags, desc, url, featured } = project
   const visibleTags = tags.slice(0, MAX_TAGS)
   const overflow = tags.length - MAX_TAGS
-  const classes = ['card', `lang-${lang}`, featured ? 'featured' : '', dimmed ? 'dimmed' : ''].filter(Boolean).join(' ')
-  const langLabel = lang === 'java' ? 'Java' : lang === 'go' ? 'Go' : 'Kotlin'
+  const classes = ['card', `track-${track}`, featured ? 'featured' : '', dimmed ? 'dimmed' : '']
+    .filter(Boolean)
+    .join(' ')
 
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" className={classes}>
-      <span className={`card-lang-pill ${lang}`}>{langLabel}</span>
+      <span className={`card-track-pill ${track}`}>{trackLabel}</span>
       <p className="card-title">{name}</p>
       <p className="card-desc">{desc}</p>
       <div className="card-tags">
@@ -26,7 +27,7 @@ export default function ProjectCard({ project, dimmed }: Props) {
         {overflow > 0 && <span className="card-tag">+{overflow}</span>}
       </div>
       <div className="card-footer">
-        <span className="card-link">GitHub →</span>
+        <span className="card-link">Ver repositório no GitHub →</span>
       </div>
     </a>
   )

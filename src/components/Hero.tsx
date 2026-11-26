@@ -2,13 +2,19 @@ export default function Hero() {
   return (
     <section className="hero">
       <p className="hero-eyebrow fade-in" style={{ animationDelay: '0ms' }}>
-        Backend Developer
+        Analista de Dados · BI · Machine Learning
       </p>
       <h1 className="hero-name fade-in" style={{ animationDelay: '80ms' }}>
         João Victor<br />Macedo Neves
       </h1>
-      <div className="hero-stacks fade-in" style={{ animationDelay: '180ms' }}>
-        <span className="stack-pill java">Java</span>
+      <p className="hero-subtitle fade-in" style={{ animationDelay: '140ms' }}>
+        Transformo dados brutos e processos operacionais em KPIs confiáveis, pipelines analíticos e modelos orientados a decisão.
+      </p>
+      <div className="hero-stacks fade-in" style={{ animationDelay: '200ms' }}>
+        <span className="stack-pill dados">Python &amp; Pandas</span>
+        <span className="stack-pill bi">SQL &amp; BI</span>
+        <span className="stack-pill ml">Databricks &amp; Spark</span>
+        <span className="stack-pill accent">ML &amp; Experimentação</span>
       </div>
       <nav className="hero-links fade-in" style={{ animationDelay: '280ms' }} aria-label="Redes sociais">
         <a href="https://github.com/nevvesdev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -37,6 +43,9 @@ export default function Hero() {
           </svg>
         </a>
       </nav>
+      <a href="#projetos" className="hero-cta fade-in" style={{ animationDelay: '340ms' }}>
+        Explorar projetos ↓
+      </a>
     </section>
   )
 }
